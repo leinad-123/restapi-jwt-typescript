@@ -52,7 +52,7 @@ export const profile = async (req: Request, res: Response) => {
             password: 0,
             __v: 0
         });
-        if(!user) res.status(404).json("No User found");
+        if(!user) return res.status(404).send("Not User found");
         res.json(user);
     } catch (e) {
         console.error(e);
